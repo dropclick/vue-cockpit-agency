@@ -1,0 +1,48 @@
+{
+  "title": "Simple Portfolio",
+  "name": "vue-cockpit-portfolio",
+  "version": "0.0.1",
+  "description": "Simple one page website using vue.js and cockpit headless CMS.",
+  "keywords": [
+    "css",
+    "sass",
+    "html",
+    "responsive",
+    "theme",
+    "template"
+  ],
+  "homepage": "https://github.com/dropclick/vue-cockpit-agency",
+  "bugs": {
+    "url": "https://github.com/dropclick/vue-cockpit-agency/issues",
+    "email": "github@svenpetersen.net"
+  },
+  "license": "MIT",
+  "author": "Sven Petersen",
+  "contributors": [
+    "Sven Petersen (http://www.svenpetersen.net/)"
+  ],
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/dropclick/vue-cockpit-agency.git"
+  },
+  "dependencies": {
+    "bootstrap": "4.0.0",
+    "font-awesome": "4.7.0",
+    "jquery": "3.3.1",
+    "jquery.easing": "1.4.1",
+    "vue": "^2.5.15",
+    "vue-cockpit": "0.2.0",
+    "whatwg-fetch": "2.0.3"
+  },
+  "devDependencies": {
+    "browser-sync": "2.23.6",
+    "gulp": "^3.9.1",
+    "gulp-clean-css": "3.9.2",
+    "gulp-header": "2.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-sass": "^3.1.0",
+    "gulp-uglify": "3.0.0",
+    "gulp-connect-php": "1.0.2",
+    "gulp-clean-dest": "0.2.0"
+  }
+}
