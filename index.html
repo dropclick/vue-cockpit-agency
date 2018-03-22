@@ -206,24 +206,9 @@
     <section class="py-5">
       <div class="container">
         <div class="row">
-          <div class="col-md-3 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/envato.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/designmodo.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/themeforest.jpg" alt="">
-            </a>
-          </div>
-          <div class="col-md-3 col-sm-6">
-            <a href="#">
-              <img class="img-fluid d-block mx-auto" src="img/logos/creative-market.jpg" alt="">
+          <div v-for="partner of collections.partners" class="col-md-3 col-sm-6">
+            <a v-bind:href="partner.url">
+              <img class="img-fluid d-block mx-auto" v-if="partner.logo" v-bind:src="basePath + partner.logo.path" v-bind:alt="partner.name">
             </a>
           </div>
         </div>
