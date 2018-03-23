@@ -8,6 +8,8 @@ var connectPhp = require('gulp-connect-php/index.js');
 var pkg = require('./package.json');
 var browserSync = require('browser-sync').create();
 var cleanDest = require('gulp-clean-dest');
+var killProcess = require('kp');
+var autoClose = require('browser-sync-close-hook');
 
 // Set the banner content
 var banner = ['/*!\n',
@@ -98,6 +100,11 @@ gulp.task('php', function () {
   connectPhp.server();
 });
 
+// Start PHP server
+gulp.task('stop-php', function () {
+  killProcess(8000);
+});
+
 // Compile SCSS
 gulp.task('css:compile', function () {
   return gulp.src('./scss/**/*.scss')
@@ -149,6 +156,12 @@ gulp.task('build', ['default', 'dist']);
 
 // Configure the browserSync task
 gulp.task('browserSync', function () {
+  browserSync.use({
+    plugin() {},
+    hooks: {
+      'server:js': autoClose,
+    },
+  });
   browserSync.init({
     server: {
       baseDir: "./"
@@ -161,4 +174,5 @@ gulp.task('dev', ['css', 'js', 'browserSync', 'php'], function () {
   gulp.watch('./scss/*.scss', ['css']);
   gulp.watch('./js/*.js', ['js']);
   gulp.watch('./*.html', browserSync.reload);
+  gulp.watch('./*.php', browserSync.reload);
 });
