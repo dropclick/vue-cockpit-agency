@@ -41,15 +41,36 @@
       array (
       ),
     ),
+    2 => 
+    array (
+      'name' => 'callToAction',
+      'label' => 'Call To Action',
+      'type' => 'html',
+      'default' => '',
+      'info' => '',
+      'group' => '',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+    ),
   ),
   'template' => '',
   'data' => 
   array (
     'title' => 'About',
     'description' => 'Lorem ipsum dolor sit amet consectetur.',
+    'callToAction' => 'Be Part
+<br>Of Our
+<br>Story!',
   ),
   '_created' => 1521795675,
-  '_modified' => 1521796863,
+  '_modified' => 1521817834,
   'description' => '',
   'acl' => 
   array (
