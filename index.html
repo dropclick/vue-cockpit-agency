@@ -264,22 +264,22 @@
       <div class="container">
         <div class="row">
           <div class="col-md-4">
-            <span class="copyright">Copyright &copy; Your Website 2018</span>
+            <span class="copyright">{{regions.footer.copyright}}</span>
           </div>
           <div class="col-md-4">
             <ul class="list-inline social-buttons">
-              <li class="list-inline-item">
-                <a href="#">
+              <li v-if="regions.footer.twitter" class="list-inline-item">
+                <a v-bind:href="regions.footer.twitter">
                   <i class="fa fa-twitter"></i>
                 </a>
               </li>
-              <li class="list-inline-item">
-                <a href="#">
+              <li v-if="regions.footer.facebook" class="list-inline-item">
+                <a v-bind:href="regions.footer.facebook">
                   <i class="fa fa-facebook"></i>
                 </a>
               </li>
-              <li class="list-inline-item">
-                <a href="#">
+              <li v-if="regions.footer.linkedIn" class="list-inline-item">
+                <a v-bind:href="regions.footer.linkedIn">
                   <i class="fa fa-linkedin"></i>
                 </a>
               </li>
@@ -287,11 +287,8 @@
           </div>
           <div class="col-md-4">
             <ul class="list-inline quicklinks">
-              <li class="list-inline-item">
-                <a href="#">Privacy Policy</a>
-              </li>
-              <li class="list-inline-item">
-                <a href="#">Terms of Use</a>
+              <li v-for="entry of collections.footerEntries" class="list-inline-item">
+                <a data-toggle="modal" v-bind:href="'#footerModal' +  entry._id">{{entry.linkTitle}}</a>
               </li>
             </ul>
           </div>
@@ -299,9 +296,7 @@
       </div>
     </footer>
 
-    <!-- Portfolio Modals -->
-
-    <!-- Generic Modal -->
+    <!-- Generic Project Modal -->
     <div v-for="project of collections.projects" class="portfolio-modal modal fade" v-bind:id="'portfolioModal' + project._id"
       tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
@@ -315,7 +310,6 @@
             <div class="row">
               <div class="col-lg-8 mx-auto">
                 <div class="modal-body">
-                  <!-- Project Details Go Here -->
                   <h2 class="text-uppercase">{{project.title}}</h2>
                   <p class="item-intro text-muted">{{project.shortDescription}}</p>
                   <img class="img-fluid d-block mx-auto" v-if="project.image" v-bind:src="basePath + project.image.path" alt="">
@@ -335,6 +329,35 @@
         </div>
       </div>
     </div>
+
+    <!-- Generic Footer Modal -->
+    <div v-for="entry of collections.footerEntries" class="portfolio-modal modal fade" v-bind:id="'footerModal' + entry._id"
+      tabindex="-1" role="dialog" aria-hidden="true">
+      <div class="modal-dialog">
+        <div class="modal-content">
+          <div class="close-modal" data-dismiss="modal">
+            <div class="lr">
+              <div class="rl"></div>
+            </div>
+          </div>
+          <div class="container">
+            <div class="row">
+              <div class="col-lg-8 mx-auto">
+                <div class="modal-body">
+                  <h2 class="text-uppercase">{{entry.modalTitle}}</h2>
+                  <br>
+                  <p v-html="entry.modalContent"></p>
+                  <button class="btn btn-primary" data-dismiss="modal" type="button">
+                    <i class="fa fsa-times"></i>
+                    Close</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
   </div>
 
   <!-- Bootstrap core JavaScript -->
