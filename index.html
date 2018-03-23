@@ -384,11 +384,11 @@
   <script src="vendor/whatwg-fetch/fetch.js"></script>
 
   <script>
-    var cockpitUrl = location.hostname == 'localhost' ? 'http://localhost:8000/admin' : location.protocol + '//' + location.hostname + location.pathname + 'admin';
-    var apiKey = '8ca1ee910b542bd3434258602e3d99';
-    var selector = '#app';
-
-    vueCockpit.init(cockpitUrl, apiKey, selector);
+    vueCockpit.init({
+      cockpitUrl: location.hostname == 'localhost' ? 'http://localhost:8000/admin' : location.protocol + '//' + location.hostname + location.pathname + 'admin',
+      apiKey: '8ca1ee910b542bd3434258602e3d99',
+      selector: '#app'
+    });
   </script>
 
 </body>
