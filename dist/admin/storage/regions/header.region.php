@@ -1,14 +1,14 @@
 <?php
  return array (
-  'name' => 'about',
-  'label' => 'About Section',
-  '_id' => 'about5ab4c25b66d17',
+  'name' => 'header',
+  'label' => 'Header',
+  '_id' => 'header5ab50d81f3f8f',
   'fields' => 
   array (
     0 => 
     array (
-      'name' => 'title',
-      'label' => 'Title',
+      'name' => 'headline',
+      'label' => 'Headline',
       'type' => 'text',
       'default' => '',
       'info' => '',
@@ -25,8 +25,8 @@
     ),
     1 => 
     array (
-      'name' => 'description',
-      'label' => 'Description',
+      'name' => 'subline',
+      'label' => 'Subline',
       'type' => 'text',
       'default' => '',
       'info' => '',
@@ -43,9 +43,27 @@
     ),
     2 => 
     array (
-      'name' => 'callToAction',
-      'label' => 'Call To Action',
-      'type' => 'html',
+      'name' => 'button',
+      'label' => 'Button',
+      'type' => 'text',
+      'default' => '',
+      'info' => '',
+      'group' => '',
+      'localize' => false,
+      'options' => 
+      array (
+      ),
+      'width' => '1-1',
+      'lst' => true,
+      'acl' => 
+      array (
+      ),
+    ),
+    3 => 
+    array (
+      'name' => 'background',
+      'label' => 'Background',
+      'type' => 'image',
       'default' => '',
       'info' => '',
       'group' => '',
@@ -63,14 +81,16 @@
   'template' => '',
   'data' => 
   array (
-    'title' => 'About',
-    'description' => 'Lorem ipsum dolor sit amet consectetur.',
-    'callToAction' => 'Be Part
-<br>Of Our
-<br>Story!',
+    'headline' => 'It\'s nice to meet you',
+    'subline' => 'Welcome to our studio!',
+    'button' => 'Tell me more',
+    'background' => 
+    array (
+      'path' => '/admin/storage/uploads/2018/03/23/5ab50e04ad12fheader-bg.jpg',
+    ),
   ),
-  '_created' => 1521795675,
-  '_modified' => 1521817834,
+  '_created' => 1521814913,
+  '_modified' => 1521815649,
   'description' => '',
   'acl' => 
   array (
