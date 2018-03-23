@@ -74,8 +74,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Services</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">{{regions.services.title}}</h2>
+            <h3 class="section-subheading text-muted">{{regions.services.description}}</h3>
           </div>
         </div>
         <div class="row text-center">
@@ -91,13 +91,13 @@
       </div>
     </section>
 
-    <!-- Portfolio Grid -->
+    <!-- Projects Grid -->
     <section class="bg-light" id="portfolio">
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Projects</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">{{regions.projects.title}}</h2>
+            <h3 class="section-subheading text-muted">{{regions.projects.description}}</h3>
           </div>
         </div>
         <div class="row">
@@ -124,8 +124,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">About</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">{{regions.about.title}}</h2>
+            <h3 class="section-subheading text-muted">{{regions.about.description}}</h3>
           </div>
         </div>
         <div class="row">
@@ -163,8 +163,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Our Amazing Team</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">{{regions.team.title}}</h2>
+            <h3 class="section-subheading text-muted">{{regions.team.description}}</h3>
           </div>
         </div>
         <div class="row">
@@ -195,8 +195,7 @@
         </div>
         <div class="row">
           <div class="col-lg-8 mx-auto text-center">
-            <p class="large text-muted">Lorem ipsum dolor sit amet, consectetur adipisicing elit. Aut eaque, laboriosam veritatis, quos non quis ad perspiciatis,
-              totam corporis ea, alias ut unde.</p>
+            <p class="large text-muted"></p>{{regions.team.longDescription}}</p>
           </div>
         </div>
       </div>
@@ -220,8 +219,8 @@
       <div class="container">
         <div class="row">
           <div class="col-lg-12 text-center">
-            <h2 class="section-heading text-uppercase">Contact Us</h2>
-            <h3 class="section-subheading text-muted">Lorem ipsum dolor sit amet consectetur.</h3>
+            <h2 class="section-heading text-uppercase">{{regions.contact.title}}</h2>
+            <h3 class="section-subheading text-muted">{{regions.contact.description}}</h3>
           </div>
         </div>
         <div class="row">
@@ -302,8 +301,9 @@
 
     <!-- Portfolio Modals -->
 
-    <!-- Modal 1 -->
-    <div v-for="project of collections.projects" class="portfolio-modal modal fade" v-bind:id="'portfolioModal' + project._id" tabindex="-1" role="dialog" aria-hidden="true">
+    <!-- Generic Modal -->
+    <div v-for="project of collections.projects" class="portfolio-modal modal fade" v-bind:id="'portfolioModal' + project._id"
+      tabindex="-1" role="dialog" aria-hidden="true">
       <div class="modal-dialog">
         <div class="modal-content">
           <div class="close-modal" data-dismiss="modal">
@@ -326,7 +326,7 @@
                     <li>Category: {{project.category}}</li>
                   </ul>
                   <button class="btn btn-primary" data-dismiss="modal" type="button">
-                    <i class="fa fa-times"></i>
+                    <i class="fa fsa-times"></i>
                     Close Project</button>
                 </div>
               </div>
